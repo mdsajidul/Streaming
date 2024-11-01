@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Documentary Streaming</title>
+    <link rel="stylesheet" href="theme1-documentary.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const videoLinks = [
+                "https://www.youtube.com/embed/MqTJbzQQLbE?si=65-eJzOi8flNi6yO",
+                "https://www.youtube.com/embed/AJiv6ER6tBw?si=KqEBZU1JO0fopboe",
+                "https://www.youtube.com/embed/qasQOkCfeck?si=4Q3fyLlhv3EpDCEc",
+                "https://www.youtube.com/embed/bUtJWJz3iUU?si=kDOIeNBaqhviRQ3F",
+                "https://www.youtube.com/embed/jP5kn4_zyCs?si=kDHcRJaUm50Xk8Ns",
+                "https://www.youtube.com/embed/rSdYKxapYKM?si=02ghnUwgLJloM44B",
+                "https://www.youtube.com/embed/NtAEj3J2PeE?si=GLU5YpKERXGcN0H3",
+                "https://www.youtube.com/embed/6yuBrLSDak0?si=zuFj6C62cpj4K0jS",
+                "https://www.youtube.com/embed/qs-vD4ja2ig?si=Y_MplDTBUQUZ-gIz",
+                "https://www.youtube.com/embed/1--h1_HpJKM?si=-GrGKOaUlkFABPKh",
+                "https://www.youtube.com/embed/a2MVBfl_7-E?si=HwVT7mGfRayoiBQj",
+                "https://www.youtube.com/embed/NEVjwGVx9NE?si=q6P4o-REZzdKYn0J",
+                "https://www.youtube.com/embed/3m7_Ozn_bvE?si=S8C5QpvlVQw5reCc",
+                "https://www.youtube.com/embed/fj_yIfpIRNA?si=hv2QjGzZ0jdYsHwf",
+                "https://www.youtube.com/embed/dMkmQ2bjyGw?si=TfXhQ0qWN_9BDu7G",
+                "https://www.youtube.com/embed/VvWa0ZSq6IY?si=42b_wvFkYqF9g7ed",
+                "https://www.youtube.com/embed/teqb4JnuGjU?si=swOdMiljr-habefx",
+                "https://www.youtube.com/embed/j1ugzp0k2g4?si=E4JeIrKmkRqHcTX2",
+                "https://www.youtube.com/embed/95OOUNgVK_Y?si=A-WmGHpdgzu_H9yU",
+                "https://www.youtube.com/embed/8R0L_5lehSU?si=LSrVizVjpQAGVvc9",
+                "https://www.youtube.com/embed/56L7rQ2zM2I?si=pdVmccOaXMlFMQJM",
+                "https://www.youtube.com/embed/qn97p54_-Tw?si=yL5v4WMndjTBPY58",
+                "https://www.youtube.com/embed/_Bdx-maAq9w?si=7cumZUANBeocV2Ps",
+                "https://www.youtube.com/embed/45oYYivNr4I?si=FI1yd-g4mTmnKItc",
+                "https://www.youtube.com/embed/SuPGjC7qo9U?si=RlgRkxFa0qrkqCpx",
+                "https://www.youtube.com/embed/9PpQW_7bksA?si=GxNNYYo__piMCvyJ",
+                "https://www.youtube.com/embed/8CHqpNFGgfM?si=hCsdd2oWrwskewPM",
+                "https://www.youtube.com/embed/VegBtpgmbMw?si=9oe5KDDgdOr27giW",
+                "https://www.youtube.com/embed/Z1KzRlqOP94?si=vuqyxGRrscE2hiB1",
+                "https://www.youtube.com/embed/FfP4nZC467M?si=KRchPL3mQMjOwhMa",
+                "https://www.youtube.com/embed/MqYVvcY72jQ?si=GoK38dj2oV_J33DQ",
+                "https://www.youtube.com/embed/-HTC4GfDibU?si=H4gMt20ZXxI1gyJ1",
+                "https://www.youtube.com/embed/wnHdHW5ZDL8?si=Ri9TvNw_2j5F9Xue",
+                "https://www.youtube.com/embed/h0tW5KnXOgg?si=ElUl4noKbO9q6DrS",
+                "https://www.youtube.com/embed/Uwa9gfyWAZE?si=w6UIczQsD72iMWWh",
+                "https://www.youtube.com/embed/bVhYARJz6ng?si=ap1386b5qTx6tB7I",
+                "https://www.youtube.com/embed/8h5bOIMYpqE?si=wZW5Ua1mKNxZdSz2"
+            ];
+
+            // Shuffle the video links
+            const shuffledVideos = videoLinks.sort(() => Math.random() - 0.5);
+            const videoGrid = document.querySelector('.video-grid');
+
+            let currentVideoIndex = 0;
+            const videosPerLoad = 4;
+
+            // Load the next set of videos
+            function loadVideos() {
+                const endIndex = Math.min(currentVideoIndex + videosPerLoad, shuffledVideos.length);
+                for (let i = currentVideoIndex; i < endIndex; i++) {
+                    const videoCard = document.createElement('div');
+                    videoCard.className = 'video-card';
+                    const iframe = document.createElement('iframe');
+                    iframe.dataset.src = shuffledVideos[i]; // Use data-src for lazy loading
+                    iframe.frameBorder = "0";
+                    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                    iframe.allowFullscreen = true;
+
+                    videoCard.appendChild(iframe);
+                    videoGrid.appendChild(videoCard);
+
+                    // Start observing the iframe
+                    observer.observe(iframe);
+                }
+                currentVideoIndex += videosPerLoad; // Update the index
+            }
+
+            // Create Intersection Observer for lazy loading
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const iframe = entry.target;
+                        iframe.src = iframe.dataset.src; // Set src from data-src
+                        observer.unobserve(iframe); // Stop observing once loaded
+                        // Load more videos if we have more to load
+                        if (currentVideoIndex < shuffledVideos.length) {
+                            loadVideos();
+                        }
+                    }
+                });
+            });
+
+            // Load the first set of videos
+            loadVideos();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">ইসলামিক ডকুমেন্টরি</div>
+        <nav>
+            <ul>
+                <li><a href="theme1-home.html">হোম</a></li>
+                <li><a href="theme1-series.html">সিরিজ</a></li>
+                <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Welcome to Islamic Documentary Streaming Site</h1>
+            <p>Watch informative and educational documentaries.</p>
+        </section>
+
+        <section class="featured-content">
+            <h2>Featured Islamic Documentaries</h2>
+            <div class="video-grid">
+                <!-- Video cards will be injected here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Islamic Documentary Site. All rights reserved.</p>
+    </footer>
+</body>
+</html>

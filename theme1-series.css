@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #ffffff;
+    overflow-y: scroll; /* Ensure scrollable area */
+}
+
+    /* Custom Scrollbar */
+    body::-webkit-scrollbar {
+        width: 12px; /* Width of the scrollbar */
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #1c1c1c; /* Background of the scrollbar track */
+        border-radius: 10px; /* Rounded corners */
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background-color: #e50914; /* Color of the scrollbar handle */
+        border-radius: 10px; /* Rounded corners */
+    }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background-color: #ff1c3b; /* Color on hover */
+        }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1c1c1c;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+            nav ul li a:hover {
+                color: #e50914;
+            }
+
+.banner {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #2c2c2c;
+}
+
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+
+.featured-content {
+    padding: 20px;
+}
+
+    .featured-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+.series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.series-card {
+    background-color: #1c1c1c;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Strong shadow effect */
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s; /* Animation effect on hover */
+}
+
+    .series-card:hover {
+        transform: translateY(-5px); /* Lift effect on hover */
+    }
+
+.watch-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e50914;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+    .watch-button:hover {
+        background-color: #ff1c3b;
+    }

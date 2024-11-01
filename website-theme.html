@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ওয়েবসাইট থিমের দোকান</title>
+    <link rel="stylesheet" href="business-card.css"> <!-- CSS ফাইলের লিঙ্ক -->
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>ওয়েবসাইট থিমের দোকান</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">হোম</a></li>
+                <li><a href="#themes">থিমসমূহ</a></li>
+                <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+                <li><a href="#cart">🛒 কার্ট</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>আপনার জন্য দারুণ ওয়েবসাইট থিম!</h2>
+            <p>আমাদের থিমগুলো দিয়ে আপনার ওয়েবসাইটকে প্রাণবন্ত ও আকর্ষণীয় করুন।</p>
+            <a href="#themes" class="cta-button">থিমগুলো দেখুন</a>
+        </div>
+    </section>
+
+    <section id="themes">
+        <h2>আমাদের ওয়েবসাইট থিম ডিজাইন</h2>
+        <div class="product-grid">
+            <!-- Theme 1 -->
+            <div class="product-card">
+                <img src="theme1.jpg" alt="থিম 1" class="product-image">
+                <h3>থিম 1</h3>
+                <p>মূল্য: <span class="price">Tk 50</span></p>
+                <button class="customize-button" onclick="location.href='theme1-home.html'">কাস্টমাইজ করুন</button>
+            </div>
+            <!-- Theme 2 -->
+            <div class="product-card">
+                <img src="theme2.jpg" alt="থিম 2" class="product-image">
+                <h3>থিম 2</h3>
+                <p>মূল্য: <span class="price">Tk 50</span></p>
+                <button class="customize-button" onclick="location.href='theme2-home.html'">কাস্টমাইজ করুন</button>
+            </div>
+            <!-- Theme 3 -->
+            <div class="product-card">
+                <img src="theme3.jpg" alt="থিম 3" class="product-image">
+                <h3>থিম 3</h3>
+                <p>মূল্য: <span class="price">Tk 50</span></p>
+                <button class="customize-button" onclick="location.href='theme3-home.html'">কাস্টমাইজ করুন</button>
+            </div>
+            <!-- Theme 4 -->
+            <div class="product-card">
+                <img src="theme4.jpg" alt="থিম 4" class="product-image">
+                <h3>থিম 4</h3>
+                <p>মূল্য: <span class="price">Tk 50</span></p>
+                <button class="customize-button" onclick="location.href='theme4-home.html'">কাস্টমাইজ করুন</button>
+            </div>
+            <!-- Theme 5 -->
+            <div class="product-card">
+                <img src="theme5.jpg" alt="থিম 5" class="product-image">
+                <h3>থিম 5</h3>
+                <p>মূল্য: <span class="price">Tk 50</span></p>
+                <button class="customize-button" onclick="location.href='theme5-home.html'">কাস্টমাইজ করুন</button>
+            </div>
+            <!-- Theme 6 -->
+            <div class="product-card">
+                <img src="theme6.jpg" alt="থিম 6" class="product-image">
+                <h3>থিম 6</h3>
+                <p>মূল্য: <span class="price">Tk 50</span></p>
+                <button class="customize-button" onclick="location.href='theme6-home.html'">কাস্টমাইজ করুন</button>
+            </div>
+            <!-- Add more themes as needed -->
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>আমাদের সম্পর্কে</h2>
+        <p>আমাদের ওয়েবসাইট থিমের দোকানে স্বাগতম! আমরা বিভিন্ন রকমের থিম ডিজাইন করি, যেগুলো আপনার প্রয়োজন মেটাবে। আপনার ব্র্যান্ডিং অনুযায়ী এগুলো কাস্টমাইজ করা যাবে। আসুন, একসাথে একটি দারুণ ওয়েবসাইট থিম ডিজাইন করি!</p>
+    </section>
+
+    <section id="contact">
+        <h2>যোগাযোগ করুন</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="আপনার নাম" required>
+            <input type="email" placeholder="আপনার ইমেইল" required>
+            <textarea rows="4" placeholder="আপনার বার্তা" required></textarea>
+            <button type="submit">বার্তা পাঠান</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 আপনার কোম্পানির নাম। সব অধিকার সংরক্ষিত।</p>
+    </footer>
+    <script>
+        // JavaScript code for handling the contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('আপনার বার্তা পাঠানো হয়েছে! আমরা শিগগিরই আপনাকে উত্তর দেব।');
+            this.reset(); // Reset the form after submission
+        });
+    </script>
+    <script src="business-card.js"></script> <!-- JS ফাইলের লিঙ্ক -->
+</body>
+</html>

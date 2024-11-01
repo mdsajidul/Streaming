@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamic Series Streaming</title>
+    <link rel="stylesheet" href="theme1-series.css"> <!-- Link to your CSS file -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const seriesLinks = [
+                {
+                    title: "আলোর পথে যাত্রা",
+                    description: "একজন আল্লাহ ওয়ালা বন্ধুর মাধ্যমে অপর বন্ধুর ইসলামে ফিরে আসার গল্প।",
+                    link: "https://www.youtube.com/watch?v=AazVq_sAVSQ&list=PLRRmxaFCrLnXjae73CpcYQd1M0wkfNtR7"
+                },
+                {
+                    title: "ছোট ছোট পরিবর্তন",
+                    description: "এখানে কিছু গল্প রয়েছে যা আপনাকে ইসলামের দিকে ফিরিয়ে আনবে।",
+                    link: "https://www.youtube.com/watch?v=dmZvU7ndLnQ&list=PLRRmxaFCrLnUIZ1gkmDN7Rjnuj5UON9bE"
+                },
+                {
+                    title: "সিরাহ",
+                    description: "রাসুল মুহাম্মাদ (সাঃ) এর জীবনি",
+                    link: "https://www.youtube.com/watch?v=pMiGC1dRf3s&list=PLRRmxaFCrLnVa-IQlyU5-tr00TRr-uIm5"
+                },
+                {
+                    title: "শ্রেষ্ঠ মানুষেরা",
+                    description: "সকল নবি-রাসুলদের সংক্ষিপ্ত জীবনি ও তা থেকে শিক্ষা",
+                    link: "https://www.youtube.com/watch?v=dvvLN5QqnX0&list=PLRRmxaFCrLnUhtZtRFOaksM17ftYoRvBT"
+                },
+                {
+                    title: "জীবন - মৃত্যু - জীবন",
+                    description: "মৃত্যু থেকে জান্নাত পর্যন্ত এমন ভাবে বর্ণনা করা হয়েছে যেন আপনার সাথে ঘটছে",
+                    link: "https://www.youtube.com/watch?v=LlkPYoxF5j0&list=PLRRmxaFCrLnWmKoxyUnS_fCDCTE6Ewd12"
+                },
+                // Add more series here
+            ];
+
+            const seriesGrid = document.querySelector('.series-grid');
+            seriesLinks.forEach(series => {
+                const seriesCard = document.createElement('div');
+                seriesCard.className = 'series-card';
+
+                seriesCard.innerHTML = `
+                    <h3>${series.title}</h3>
+                    <p>${series.description}</p>
+                    <div style="text-align: center;">
+                        <a href="${series.link}" class="watch-button" target="_blank">Watch Now</a>
+                    </div>
+                `;
+                seriesGrid.appendChild(seriesCard);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">ইসলামিক সিরিজ</div>
+        <nav>
+            <ul>
+                <li><a href="theme1-home.html">হোম</a></li>
+                <li><a href="theme1-documentary.html">ডকুমেন্টরি</a></li>
+                <li><a href="#about">আমাদের সম্পর্কে</a></li>
+                <li><a href="#contact">যোগাযোগ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="banner">
+            <h1>Welcome to Islamic Series Streaming Site</h1>
+            <p>Explore a variety of informative and educational Islamic series.</p>
+        </section>
+
+        <section class="featured-content">
+            <h2>Featured Islamic Series</h2>
+            <div class="series-grid">
+                <!-- Series cards will be injected here by JavaScript -->
+            </div>
+        </section>
+    </main>
+</body>
+</html>

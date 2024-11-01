@@ -1,0 +1,150 @@
+/* This is theme1-home.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #ffffff;
+    overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #1c1c1c; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e50914; /* Color of the scrollbar handle */
+    border-radius: 5px; /* Rounded corners */
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #f40612; /* Color on hover */
+    }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #1c1c1c;
+}
+
+.logo {
+    font-size: 1.5rem; /* Use rem for responsiveness */
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+    nav ul li {
+        margin-left: 1.5rem; /* Use rem for responsiveness */
+    }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+            nav ul li a:hover {
+                color: #e50914;
+            }
+
+.banner {
+    text-align: center;
+    padding: 5rem 2rem; /* Use rem for responsiveness */
+    background: url('banner-image.jpg') no-repeat center center/cover;
+}
+
+    .banner h1 {
+        font-size: 3rem; /* Use rem for responsiveness */
+    }
+
+    .banner p {
+        font-size: 1.2rem; /* Use rem for responsiveness */
+    }
+
+.featured-content {
+    padding: 2rem; /* Use rem for responsiveness */
+}
+
+    .featured-content h2 {
+        font-size: 1.75rem; /* Use rem for responsiveness */
+        margin-bottom: 1.5rem; /* Use rem for spacing */
+    }
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem; /* Use rem for spacing */
+}
+
+.video-card {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow effect */
+}
+
+    .video-card iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        nav ul li {
+            margin-left: 0;
+            margin-bottom: 1rem; /* Spacing between navigation items */
+        }
+
+    .banner h1 {
+        font-size: 2.5rem; /* Adjust font size */
+    }
+
+    .banner p {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .featured-content h2 {
+        font-size: 1.5rem; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .banner h1 {
+        font-size: 2rem; /* Further adjust font size */
+    }
+
+    .banner p {
+        font-size: 0.9rem; /* Further adjust font size */
+    }
+
+    .featured-content h2 {
+        font-size: 1.25rem; /* Further adjust font size */
+    }
+}
