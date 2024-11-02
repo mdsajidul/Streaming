@@ -87,12 +87,20 @@ nav ul {
         font-size: 18px;
     }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1c1c1c;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    color: #ffffff;
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
 }
+
+::-webkit-scrollbar-track {
+    background: #1c1c1c; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e50914; /* Color of the scrollbar handle */
+    border-radius: 5px; /* Rounded corners */
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #f40612; /* Color on hover */
+    }
